@@ -1,0 +1,393 @@
+/* Contenedor Principal */
+.detalles-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tarjeta de Detalles Horizontal */
+.detalles-card {
+    background-color: #0f3460;
+    border: 3px solid #ff6b00;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(255, 107, 0, 0.3);
+    transition: all 0.3s ease;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.detalles-card:hover {
+    box-shadow: 0 15px 50px rgba(255, 107, 0, 0.5);
+    border-color: #ff9500;
+}
+
+/* Imagen Wrapper */
+.imagen-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.personaje-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.detalles-card:hover .personaje-imagen {
+    transform: scale(1.05);
+}
+
+/* Overlay en Imagen */
+.imagen-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+}
+
+.nombre-grande {
+    color: #ff6b00;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Encabezado */
+.detalles-header {
+    border-bottom: 2px solid #ff6b00;
+    padding-bottom: 1.5rem;
+}
+
+.detalles-titulo {
+    color: #ff6b00;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detalles-subtitulo {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Grid de Información Básica */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.info-box {
+    background-color: rgba(255, 107, 0, 0.15);
+    border: 2px solid #ff6b00;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    background-color: rgba(255, 107, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+.info-label {
+    display: block;
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.info-dato {
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Sección Ki */
+.ki-section {
+    background-color: rgba(100, 200, 255, 0.15);
+    border-left: 4px solid #64c8ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.ki-bar-container {
+    margin-bottom: 1.5rem;
+}
+
+.ki-bar-container:last-child {
+    margin-bottom: 0;
+}
+
+.ki-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #64c8ff;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.ki-value {
+    color: #fff;
+    font-family: 'Courier New', monospace;
+}
+
+.ki-progress {
+    height: 25px;
+    background-color: rgba(100, 200, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ki-bar {
+    background: linear-gradient(90deg, #64c8ff 0%, #3da9ff 100%);
+    transition: width 0.5s ease;
+}
+
+.ki-bar-max {
+    background: linear-gradient(90deg, #64ff96 0%, #32c764 100%);
+}
+
+/* Sección Descripción */
+.descripcion-section {
+    background-color: rgba(200, 200, 200, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #d0d0d0;
+}
+
+.seccion-titulo {
+    color: #ff6b00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.descripcion-texto {
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Sección Planeta */
+.planeta-section {
+    background-color: rgba(100, 255, 150, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #64ff96;
+}
+
+.planeta-card {
+    background-color: rgba(100, 255, 150, 0.05);
+    border: 1px solid #64ff96;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.planeta-card:hover {
+    background-color: rgba(100, 255, 150, 0.15);
+    box-shadow: 0 4px 12px rgba(100, 255, 150, 0.2);
+}
+
+.planeta-info {
+    text-align: center;
+}
+
+.planeta-nombre {
+    color: #64ff96;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.planeta-descripcion {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.planeta-estado {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: #64ff96;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.planeta-estado.destruido {
+    background-color: #ff6464;
+    color: #fff;
+}
+
+/* Sección Transformaciones */
+.transformaciones-section {
+    background-color: rgba(255, 200, 100, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc864;
+}
+
+.transformaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.transformacion-item {
+    perspective: 1000px;
+}
+
+.transformacion-card {
+    background-color: rgba(255, 200, 100, 0.15);
+    border: 2px solid #ffc864;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.transformacion-card:hover {
+    background-color: rgba(255, 200, 100, 0.25);
+    border-color: #ffdd8a;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255, 200, 100, 0.3);
+}
+
+.transformacion-imagen {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.transformacion-card:hover .transformacion-imagen {
+    transform: scale(1.1);
+}
+
+.transformacion-nombre {
+    color: #ffc864;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.transformacion-ki {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .detalles-container {
+        padding: 1rem;
+    }
+
+    .imagen-wrapper {
+        min-height: 300px;
+    }
+
+    .detalles-titulo {
+        font-size: 1.8rem;
+    }
+
+    .nombre-grande {
+        font-size: 1.5rem;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .transformaciones-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .detalles-card {
+        border-width: 2px;
+    }
+
+    .imagen-wrapper {
+        min-height: 250px;
+    }
+
+    .detalles-titulo {
+        font-size: 1.4rem;
+    }
+
+    .nombre-grande {
+        font-size: 1.2rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .seccion-titulo {
+        font-size: 1rem;
+    }
+
+    .transformaciones-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .transformacion-imagen {
+        width: 60px;
+        height: 60px;
+    }
+
+    .descripcion-texto {
+        text-align: left;
+    }
+}

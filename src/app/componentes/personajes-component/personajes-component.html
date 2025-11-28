@@ -1,0 +1,89 @@
+<div class="container-fluid py-5 personajes-container">
+    <div class="row mb-5">
+        <div class="col-12">
+            <h1 class="personajes-title text-center">Guerreros Dragon Ball</h1>
+        </div>
+    </div>
+
+    <div *ngIf="loading()" class="text-center">
+        <p>Cargando personajes...</p>
+    </div>
+
+    <div *ngIf="error()" class="alert alert-danger" role="alert">
+        {{ error() }}
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let personaje of personajes()">
+            <div class="card personaje-card h-100">
+                <!-- Imagen del Personaje -->
+                <div class="personaje-image-container">
+                    <img [src]="personaje.image" [alt]="personaje.name" class="card-img-top personaje-image">
+                    <div class="personaje-overlay">
+                        <button class="btn btn-primary btn-sm" (click)="verDetalles(personaje.id)">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cuerpo de la Tarjeta -->
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title personaje-name">{{ personaje.name }}</h5>
+
+                    <div class="personaje-info mb-3">
+                        <div class="info-item">
+                            <span class="info-label">Raza:</span>
+                            <span class="info-value">{{ personaje.race }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Género:</span>
+                            <span class="info-value">{{ personaje.gender }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Afiliación:</span>
+                            <span class="info-value">{{ personaje.affiliation }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Ki Information -->
+                    <div class="ki-info mb-3">
+                        <div class="ki-item">
+                            <span class="ki-label">Ki:</span>
+                            <span class="ki-value">{{ personaje.ki }}</span>
+                        </div>
+                        <div class="ki-item">
+                            <span class="ki-label">Max Ki:</span>
+                            <span class="ki-value">{{ personaje.maxKi }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <p class="card-text personaje-description">{{ personaje.description }}</p>
+
+                    <!-- Planeta de Origen -->
+                    <div class="origin-planet mb-3" *ngIf="personaje.originPlanet">
+                        <h6 class="origin-title">Planeta de Origen</h6>
+                        <div class="origin-info">
+                            <span class="origin-name">{{ personaje.originPlanet.name || 'Desconocido' }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Transformaciones -->
+                    <div class="transformations mt-auto">
+                        <h6 class="transformations-title">Transformaciones</h6>
+                        <div class="transformations-list" *ngIf="personaje.transformations && personaje.transformations.length > 0">
+                            <div class="transformation-badge" *ngFor="let trans of personaje.transformations">
+                                <img [src]="trans.image" [alt]="trans.name" class="trans-img">
+                            </div>
+                        </div>
+                        <p class="text-muted small" *ngIf="!personaje.transformations || personaje.transformations.length === 0">
+                            Sin transformaciones
+                        </p>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" (click)="verDetalles(personaje.id)">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

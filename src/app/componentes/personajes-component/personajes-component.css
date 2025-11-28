@@ -1,0 +1,289 @@
+/* Container y Título */
+.personajes-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+}
+
+.personajes-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.title-divider {
+    border: 2px solid #ff6b00;
+    width: 200px;
+    margin: 0;
+}
+
+/* Tarjeta del Personaje */
+.personaje-card {
+    background-color: #0f3460;
+    border: 2px solid #ff6b00;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+}
+
+.personaje-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    border-color: #ff9500;
+}
+
+/* Contenedor de Imagen */
+.personaje-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+}
+
+.personaje-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.personaje-card:hover .personaje-image {
+    transform: scale(1.1);
+}
+
+/* Overlay en la Imagen */
+.personaje-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.personaje-card:hover .personaje-overlay {
+    opacity: 1;
+}
+
+.personaje-overlay .btn {
+    background-color: #ff6b00;
+    border-color: #ff6b00;
+    font-weight: bold;
+    padding: 8px 24px;
+}
+
+.personaje-overlay .btn:hover {
+    background-color: #ff9500;
+    border-color: #ff9500;
+}
+
+/* Nombre del Personaje */
+.personaje-name {
+    color: #ff6b00;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Información General */
+.personaje-info {
+    background-color: rgba(255, 107, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ff6b00;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.info-label {
+    color: #b0b0b0;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Información de Ki */
+.ki-info {
+    background-color: rgba(100, 200, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #64c8ff;
+}
+
+.ki-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.ki-label {
+    color: #64c8ff;
+    font-weight: 600;
+}
+
+.ki-value {
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+/* Descripción */
+.personaje-description {
+    color: #d0d0d0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* Planeta de Origen */
+.origin-planet {
+    background-color: rgba(100, 255, 150, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #64ff96;
+}
+
+.origin-title {
+    color: #64ff96;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.origin-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.origin-name {
+    color: #fff;
+    font-weight: bold;
+}
+
+.origin-status {
+    background-color: #64ff96;
+    color: #000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.origin-status.destroyed {
+    background-color: #ff6464;
+    color: #fff;
+}
+
+/* Transformaciones */
+.transformations {
+    background-color: rgba(255, 200, 100, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc864;
+}
+
+.transformations-title {
+    color: #ffc864;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.transformations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.transformation-badge {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ffc864;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.transformation-badge:hover {
+    border-color: #ffdd8a;
+    box-shadow: 0 0 10px rgba(255, 200, 100, 0.5);
+    transform: scale(1.1);
+}
+
+.trans-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .personajes-title {
+        font-size: 2rem;
+    }
+
+    .title-divider {
+        width: 150px;
+    }
+
+    .personaje-image-container {
+        height: 250px;
+    }
+
+    .personaje-name {
+        font-size: 1.25rem;
+    }
+
+    .personaje-description {
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .personajes-container {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .personajes-title {
+        font-size: 1.5rem;
+    }
+
+    .title-divider {
+        width: 100px;
+    }
+
+    .personaje-image-container {
+        height: 200px;
+    }
+
+    .personaje-card {
+        margin-bottom: 1rem;
+    }
+}
